@@ -11,6 +11,20 @@ class AlunoController{
         const { alunos, total } = await alunoService.findMany(page, pageSize, orderBy, order);
         return response.status(200).json({alunos, total});
     }
+    
+    async findById(request, response) {
+        try{
+            const aluno = await alunoService.findById(request.params.id);
+            return response.status(200).json({aluno});
+        }catch (error) {
+            return response.status(error.statusCode || 500).json({
+                error: error.message
+            });
+        }
+    }
+
+
+
 
     async create(request, response){
         try{

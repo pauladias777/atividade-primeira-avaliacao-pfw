@@ -8,6 +8,7 @@ router.get("/", (request, response, next)=>{
     console.log("Esse middleware está executando antes do controller!");
     next();
 }, alunoController.findMany);
+router.get("/:id", alunoController.findById);
 router.post("/", validarAluno, alunoController.create);
 
 module.exports = router;
