@@ -1,4 +1,4 @@
-# Atividade — Primeira Avaliação Programação para Frameworks Web
+# Atividade — Primeira Avaliação: Programação para Frameworks Web
 
 Atividade individual da disciplina de Programação de Frameworks Web.
 
