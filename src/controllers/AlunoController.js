@@ -32,7 +32,23 @@ class AlunoController{
             return response.status(200).json({aluno});
         }catch(error){
             return response.status(error.statusCode || 500).json({
-            error:error.message
+            error: error.message
+            });
+        }
+    }
+
+    async delete (request, response){
+        try{
+            const aluno = await alunoService.delete(request.params.id);
+
+            return response.status(200).json({
+                message: "Aluno removido com sucesso",
+                aluno
+            });
+
+        }catch (error){
+            return response.status(error.statusCode || 500).json({
+                error: error.message
             });
         }
     }
